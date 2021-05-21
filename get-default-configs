@@ -1,0 +1,16 @@
+#!/bin/bash
+
+mkdir -p default-configs && (
+  id=$(docker create osminogin/tor-simple) && (
+    docker cp $id:/etc/tor default-configs/
+    docker rm -v $id > /dev/null
+  )
+
+  id=$(docker create nginx) && (
+    docker cp $id:/etc/nginx default-configs/
+    docker rm -v $id > /dev/null
+  )
+
+  # Fix permissions because this was probably run with sudo.
+  chown -R --reference=. default-configs
+)

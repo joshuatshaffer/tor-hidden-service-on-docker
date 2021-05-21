@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Note: The stack must already be up for this to work.
+
+docker-compose exec tor cat /var/lib/tor/hidden_service/hostname
