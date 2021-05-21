@@ -1,0 +1,11 @@
+version: "3"
+services:
+  web:
+    image: nginx
+  tor:
+    image: osminogin/tor-simple
+    volumes:
+      - ./torrc:/etc/tor/torrc:ro
+      - tor-data-directory:/var/lib/tor
+volumes:
+  tor-data-directory:
