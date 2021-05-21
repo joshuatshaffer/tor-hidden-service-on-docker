@@ -2,8 +2,6 @@
 # but it's not needed for hidden services
 SOCKSPort 0
 
-Log notice file /var/log/tor/notices.log
-
 DataDirectory /var/lib/tor
 
 # Each hidden service needs it's own directory to store public/private keys
