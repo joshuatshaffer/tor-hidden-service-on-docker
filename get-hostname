@@ -3,3 +3,12 @@
 # Note: The stack must already be up for this to work.
 
 docker-compose exec tor cat /var/lib/tor/hidden_service/hostname
+
+# If using multiple hidden services you can use the following to get all of 
+# their hostnames.
+# docker-compose exec tor sh -c '
+#  for i in /var/lib/tor/*/hostname; do
+#    echo -n "$i	"
+#    cat "$i"
+#  done
+# '
