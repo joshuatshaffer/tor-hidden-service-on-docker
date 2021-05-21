@@ -2,6 +2,8 @@ version: "3"
 services:
   web:
     image: nginx
+    volumes:
+      - ./public:/usr/share/nginx/html:ro
   tor:
     image: osminogin/tor-simple
     volumes:
