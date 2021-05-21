@@ -71,6 +71,9 @@ DataDirectory /var/lib/tor
 #HiddenServicePort 80 127.0.0.1:80
 #HiddenServicePort 22 127.0.0.1:22
 
+HiddenServiceDir /var/lib/tor/hidden_service/
+HiddenServicePort 80 web:80
+
 ################ This section is just for relays #####################
 #
 ## See https://www.torproject.org/docs/tor-doc-relay for details.

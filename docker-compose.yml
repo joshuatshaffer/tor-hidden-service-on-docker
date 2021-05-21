@@ -7,5 +7,7 @@ services:
     volumes:
       - ./torrc:/etc/tor/torrc:ro
       - tor-data-directory:/var/lib/tor
+    depends_on:
+      - web
 volumes:
   tor-data-directory:
